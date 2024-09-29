@@ -1,0 +1,4 @@
+{
+    "port" : "9000",
+    "Db" : "mongodb+srv://aman:Aman%40123@amancluster.hi5q3.mongodb.net/mydatabase?retryWrites=true&w=majority"
+}
