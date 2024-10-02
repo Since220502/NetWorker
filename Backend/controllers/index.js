@@ -1,5 +1,6 @@
 module.exports= {
-    userController:require("./user-controller")
+    userController:require("./user-controller"),
+    // skillController:require("./skill-controller"),
 }
 
 /**

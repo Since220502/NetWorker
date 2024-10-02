@@ -1,5 +1,8 @@
 const user = require("../models/user-model")
+const skill = require("../models/skill-model")
 const { userService } = require("../services")
+const { skillServices } = require("../services")
+const { isAdmin } = require("../services/user-service")
 
 
 exports.createUser = (req,res,next) => {
@@ -27,6 +30,19 @@ exports.terminateUser = async (req,res,next) => {
         res.status(200).send("Deleted", deleting)
     } catch (error) {
         console.log("Terminatin User errror: ", error)
+    }
+}
+
+exports.createSkill =async (req,res,next) => {
+    try {
+        
+        const Skill =  await skillServices.addNewSkill(req)
+
+        if(isAdmin(req)) res.status(400).send(`User '${req.body.username}' is not admin`)
+        res.status(201).send("Created Skill");
+
+    } catch (error) {
+        console.error("Controller not Able to respond:", error )
     }
 }
 

@@ -5,11 +5,11 @@ const userSchema = new mongoose.Schema({
 
     firstname: {
         type: String,
-        // require: true,
+        require: true,
     },
     lastname: {
         type: String,
-        // require: true,
+        require: true,
     },
     username: {
         type: String,
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
 
     password: {
         type: String,
-        // require: true,
+        require: true,
         
     },
     age: {
@@ -47,7 +47,7 @@ const userSchema = new mongoose.Schema({
 
     isStudent : {
         type :Boolean,
-        require : true
+        // require : true
     },
 
     dOB : {
@@ -57,7 +57,7 @@ const userSchema = new mongoose.Schema({
 
     collageName : {
         type : String,
-        require : true
+        // require : true
     }, 
     
     lookingJob : {
@@ -75,6 +75,11 @@ const userSchema = new mongoose.Schema({
         require: true,
 
     },
+
+    skillset : [{
+        type: mongoose.Schema.Types.ObjectId, // Reference to Skill IDs
+        ref: 'Skill',
+    }]
     
 
 

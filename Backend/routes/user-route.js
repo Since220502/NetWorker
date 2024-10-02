@@ -7,5 +7,7 @@ router.get("/", userController.findUsers);
 
 router.delete("/:username" , userController.terminateUser);
 
+router.put("/", userController.createSkill);
+
 
 module.exports = router
